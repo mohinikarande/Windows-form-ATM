@@ -1,0 +1,32 @@
+﻿<Window x:Class="ATMDemoProject_MVVM.Views.LoginForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ATMDemoProject_MVVM.Views"
+        xmlns:vm="clr-namespace:ATMDemoProject_MVVM.ViewModel"
+        mc:Ignorable="d"
+        Title="LoginForm" Height="450" Width="800" WindowState="Maximized" Background="MediumBlue" Foreground="White" FontSize="22">
+    <Window.Resources>
+        <vm:ATMInfoViewModel x:Key="usViewModelObj"/>
+    </Window.Resources>
+    <Grid DataContext="{StaticResource usViewModelObj}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="300"/>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0" Content="Welcome To ATM" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
+        <Label Grid.Row="1" Content="CardNumber" HorizontalContentAlignment="Left" Height ="50" VerticalContentAlignment="Center" FontSize="20" Foreground="White"/>
+        <Label Grid.Row="2" Content="Pin" HorizontalContentAlignment="Left" Height ="50" VerticalContentAlignment="Center" FontSize="20" Foreground="White"/>
+        <TextBox Name="txtCardNumber" Grid.Row="1" Grid.Column="1" Text="{Binding UI_CardNumber, UpdateSourceTrigger=PropertyChanged}" />
+        <TextBox Name="txtPinNumber" Grid.Row="2" Grid.Column="1" Text="{Binding UI_Pin, UpdateSourceTrigger=PropertyChanged}" />
+        
+        <Button  Name="btnLogin" Grid.Row="3" Grid.Column="1" Content="Login" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White" Background="Green" Command="{Binding LoginCommand, UpdateSourceTrigger=PropertyChanged}"/>
+    </Grid>
+</Window>

@@ -1,0 +1,26 @@
+﻿<Window x:Class="ATMDemoProject_MVVM.Views.TransactionOperation"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ATMDemoProject_MVVM.Views"
+        xmlns:vm="clr-namespace:ATMDemoProject_MVVM.ViewModel"
+        mc:Ignorable="d"
+        Title="TransactionOperation" Height="450" Width="800" WindowState="Maximized" Background="MediumBlue" Foreground="White" FontSize="22">
+    <Window.Resources>
+        <vm:ATMInfoViewModel x:Key="usViewModelObj"/>
+    </Window.Resources>
+    <StackPanel DataContext="{StaticResource usViewModelObj}">
+        
+
+        <Label Content="Choose Transaction" FontSize="16"
+               HorizontalAlignment="Center" Grid.Row="0" Grid.Column="1" FontFamily="Times New Roman" FontWeight="Bold"/>
+
+        <Button Content="Check Balance"  Width="200" Command="{Binding CheckBalanceCommand}"/>
+
+        <Button Content="Mini Statement" Width="200" Command="{Binding MiniStatementCommand}"/>
+
+
+
+    </StackPanel>
+</Window>

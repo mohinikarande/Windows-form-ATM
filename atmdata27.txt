@@ -1,0 +1,42 @@
+create database ATMDatabase;
+
+use AtmDataBase;
+create table CardInformation (
+UserName varchar(20) not null,
+CardNumber varchar(20) not null primary key,
+Pin varchar (10) not null)
+
+INSERT INTO CardInformation VALUES("MOHINI",8423561079853146,6455);
+INSERT INTO CardInformation VALUES("JENNY",9561023489521753,6452);
+INSERT INTO CardInformation VALUES("AKSHAY",6412359781024568,6451);
+INSERT INTO CardInformation VALUES("MERRY",8423561079853112,6450);
+INSERT INTO CardInformation VALUES("TOM",8423561079853132,6453);
+
+
+select * from CardInformation;
+use ATMDatabase;
+create table AccountDetails(
+Id int not null primary key,
+AccountBalance int ,
+TransactionDate datetime,
+CardNumber varchar(20));
+ 
+
+insert into AccountDetails values( 1,50000, '2022-06-11', 8423561079853146);
+insert into AccountDetails values( 2,40000, '2022-07-12', 8423561079853146);
+insert into AccountDetails values( 3,30000, '2022-08-10', 8423561079853146);
+insert into AccountDetails values( 4,80000, '2022-05-05', 9561023489521753);
+insert into AccountDetails values( 5,60000, '2022-07-11', 9561023489521753);
+insert into AccountDetails values( 6,30000, '2022-08-12', 9561023489521753);
+insert into AccountDetails values( 7,20000, '2022-08-12', 6412359781024568);
+insert into AccountDetails values( 8,30000, '2022-07-16', 6412359781024568);
+insert into AccountDetails values( 9,40000, '2022-06-05', 6412359781024568);
+insert into AccountDetails values( 10,40000, '2022-07-07', 8423561079853112);
+insert into AccountDetails values( 11,50000, '2022-06-04', 8423561079853112);
+insert into AccountDetails values( 12,80000, '2022-08-03', 8423561079853112);
+insert into AccountDetails values( 13,30000, '2022-06-06', 8423561079853132);
+insert into AccountDetails values( 14,40000, '2022-07-07', 8423561079853132);
+insert into AccountDetails values( 15,60000, '2022-09-08', 8423561079853132);
+
+
+select * from AccountDetails;
